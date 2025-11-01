@@ -1,0 +1,16 @@
+# Virtual environment
+venv/
+
+# Byte-compiled / cache files
+__pycache__/
+*.pyc
+
+# Streamlit cache
+.streamlit/
+
+# Data files
+data/*.csv
+
+# OS files
+.DS_Store
+Thumbs.db
