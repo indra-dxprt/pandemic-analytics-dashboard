@@ -4,7 +4,7 @@ from datetime import datetime
 import os
 import sys
 
-# === Configuration ===
+#  Configuration
 countries = [
     "Germany", "France", "United Kingdom", "Italy", "Spain",
     "Poland", "Sweden", "Norway", "United States", "Canada",
@@ -18,7 +18,7 @@ dates = pd.date_range(start_date, end_date, freq="D")
 
 print(f"[INFO] Generating synthetic data for {len(countries)} countries and {len(dates)} days...")
 
-# === Generate Fake Data ===
+# Generate Fake Data
 rows = []
 rng = np.random.default_rng(42)
 
@@ -44,7 +44,7 @@ for country in countries:
             "icu_patients": round(icu_patients)
         })
 
-# === Create DataFrame ===
+# Create DataFrame
 df = pd.DataFrame(rows)
 print(f"[INFO] Generated {len(df):,} rows.")
 
