@@ -8,7 +8,7 @@ from utils.data_loader import load_offline_data
 
 st.set_page_config(page_title="Pandemic Analytics Dashboard", layout="wide")
 
-# === Load data ===
+#   Load data  
 @st.cache_data
 def get_data():
     df = load_offline_data()
@@ -20,7 +20,7 @@ df = get_data()
 st.title("🧬 Pandemic Analytics Dashboard 2.0")
 st.caption("Offline synthetic data – no internet connection required.")
 
-# === World map ===
+#   World map  
 st.subheader("🌍 Select a Country")
 
 map_metric = st.selectbox("Choose a metric to visualize on the world map:",
@@ -40,14 +40,14 @@ fig_map.update_layout(height=500, margin=dict(l=0, r=0, t=40, b=0))
 
 st.plotly_chart(fig_map, use_container_width=True)
 
-# === Country selection ===
+#   Country selection  
 st.subheader("📊 Country Details")
 
 countries = sorted(df["location"].unique())
 country = st.selectbox("Select Country:", countries, index=countries.index("Germany") if "Germany" in countries else 0)
 data_country = df[df["location"] == country].sort_values("date")
 
-# === Tabs for different analyses ===
+#   Tabs for different analyses  
 tab1, tab2, tab3 = st.tabs(["Overview", "Trends", "Comparisons"])
 
 # --- Overview ---
