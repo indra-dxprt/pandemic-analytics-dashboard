@@ -13,12 +13,11 @@ countries = [
 start_date = datetime(2023, 1, 1)
 end_date = datetime(2024, 12, 31)
 
-# === Generate Dates ===
+
 dates = pd.date_range(start_date, end_date, freq="D")
 
 print(f"[INFO] Generating synthetic data for {len(countries)} countries and {len(dates)} days...")
 
-# Generate Fake Data
 rows = []
 rng = np.random.default_rng(42)
 
@@ -44,7 +43,6 @@ for country in countries:
             "icu_patients": round(icu_patients)
         })
 
-# Create DataFrame
 df = pd.DataFrame(rows)
 print(f"[INFO] Generated {len(df):,} rows.")
 
