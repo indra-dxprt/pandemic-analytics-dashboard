@@ -114,4 +114,4 @@ with tab3:
     else:
         st.info("Select one or more countries to compare.")
 
-st.success("✅ Dashboard loaded successfully in offline mode.")
+st.success(" Dashboard loaded successfully in offline mode.")
